@@ -19,5 +19,4 @@ companies:
   - {ats: ashby, slug: tekion, name: Tekion}
   - {ats: greenhouse, slug: observeai, name: Observe.AI}
   - {ats: ashby, slug: level-ai, name: Level AI}
-  - {ats: lever, slug: clevertap, name: CleverTap}
   - {ats: ashby, slug: airwallex, name: Airwallex}
