@@ -22,6 +22,21 @@ filters:
     - 'site reliability engineer'
     - '\bsre\b'
     - 'member of technical staff'
+    # frontend / mobile — added since you're targeting full-stack, which
+    # includes the frontend and React Native side of your profile.
+    - '\b(frontend|front-end)\b.*\bengineer\b'
+    - '\bengineer\b.*\b(frontend|front-end)\b'
+    - '\breact\b.*\b(developer|engineer)\b'
+    - '\b(mobile|react native|ios|android)\b.*\b(developer|engineer)\b'
+    # AI/ML applications — matches your RAG/vector DB/conversational AI work,
+    # deliberately NOT "data scientist" or "research scientist" (excluded
+    # below), since those need a different, stats-heavy background.
+    - '\b(ai|ml|machine learning)\b.*\bengineer\b'
+    - '\bengineer\b.*\b(ai|ml|machine learning)\b'
+    - '\bapplied (ai|ml|machine learning)\b'
+    # fresher / entry-level signals — companies phrase junior roles differently.
+    - '\b(junior|associate|graduate)\b.*\bengineer\b'
+    - '\bengineer\s*[i1]\b'
     # systems / networking track — matches your DPDK, packet-processing and
     # kernel background. Drop these if you widen away from low-level work.
     - '\bnetwork(ing)?\s+(software\s+)?engineer\b'
@@ -41,9 +56,9 @@ filters:
     - '\bsenior\b'
     - '\b(director|vp|vice president|head of|chief|cto)\b'
     - '\b(manager|management)\b'
-    - '\b(intern|internship|apprentice|trainee)\b'                # too junior
+    - '\b(intern|internship|apprentice|trainee)\b'                # you're full-time now, not internship track
     - '\b(sales|account executive|marketing|recruit|support|success)\b'
-    - '\b(game|designer)\b' # wrong discipline # wrong discipline
+    - '\b(game|designer)\b'                                       # wrong discipline
     - '\b(data scientist|machine learning scientist|research scientist)\b'
 
   # Substrings matched against "<location> <title>", case-insensitive.
@@ -52,6 +67,13 @@ filters:
     - bangalore
     - bengaluru
     - india
+    - pune
+    - hyderabad
+    - mumbai
+    - delhi
+    - gurgaon
+    - gurugram
+    - noida
 
   # If true, anything reading as remote passes the location gate.
   allow_remote: true
